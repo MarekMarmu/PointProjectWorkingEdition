@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulář pro nahrávání obrázků</title>
+</head>
+<body>
+
+<h2>Nahrát obrázek</h2>
+
+<form id="uploadForm" enctype="multipart/form-data">
+  <input type="file" name="image" accept="image/*" required>
+  <button type="button" onclick="uploadImage()">Nahrát</button>
+</form>
+
+<div id="previewContainer">
+  <h3>Náhled obrázku:</h3>
+  <img id="previewImage" alt="Náhled obrázku">
+</div>
+
+<script>
+  function uploadImage() {
+    let formData = new FormData(document.getElementById('uploadForm'));
+
+
+    fetch('/upload-endpoint', {
+      method: 'POST',
+      body: formData
+    })
+            .then(response => response.json())
+            .then(data => {
+
+              console.log(data);
+
+
+              let previewImage = document.getElementById('previewImage');
+              previewImage.src = data.imageUrl;
+
+
+              document.getElementById('previewContainer').style.display = 'block';
+            })
+            .catch(error => {
+              console.error('Chyba při nahrávání obrázku:', error);
+            });
+  }
+</script>
+
+</body>
+</html>

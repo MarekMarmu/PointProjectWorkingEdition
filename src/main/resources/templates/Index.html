@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+	<link rel="stylesheet" type="text/css" href="IndexCss.css">
+	<link rel="stylesheet" type="text/css" href="animations.css">
+	<script src="script.js" defer></script>
+	<style>
+		/* FRAMEWORK----------------------------------------------------------------------------------------*/
+		* {
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+		button {
+			background-color: inherit;
+			border: none;
+			font-family: inherit;
+			font-size: inherit;
+		}
+		button:hover {
+			cursor: pointer;
+		}
+		body {
+			font-size: 14px;
+			font-family: Calibri, Verdana, sans-serif;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.d-flex {
+			display: flex;
+		}
+		.col {
+			flex: 1;
+		}
+		.gap1 {
+			column-gap: 10px;
+		}
+		.gap2 {
+			column-gap: 20px;
+		}
+		.gap3 {
+			column-gap: 30px;
+		}
+		.gap4 {
+			column-gap: 40px;
+		}
+		.gap5 {
+			column-gap: 5%;
+		}
+		.gh1 {
+			font-size: 30px;
+		}
+		.gh2 {
+			font-size: 20px;
+		}
+
+		/* FRAMEWORK----------------------------------------------------------------------------------------*/
+
+		/* HEADER ------------------------------------------------------------------------------------------*/
+		header {
+			width: 90%;
+			margin: 0px auto;
+			border-bottom: 1px solid #666;
+			padding-bottom: 20px;
+			padding-top: 40px;
+		}
+		#searchbar {
+			width: 300px;
+			flex-shrink: 0;
+		}
+		.search {
+			border: 2px solid black;
+			border-radius: 60px;
+			width: 20px;
+			padding: 10px 15px;
+			margin-left: 0px;
+			opacity: 0;
+			transition: opacity 0.5s ease-in, width 0.5s ease-in;
+		}
+		#searchbar:hover .search, .search:focus {
+			opacity: 1;
+			width: 260px;
+		}
+		#icon {
+			width: 40px;
+			margin-right: 10px;
+		}
+		#logo {
+			text-align: center;
+		}
+		#logo h1 {
+			font-size: 40px;
+			font-weight: lighter;
+			text-transform: uppercase;
+		}
+		#user {
+			align-items: center;
+			justify-content: end;
+		}
+		#user img {
+			width: 40px;
+			height: 40px;
+		}
+		#user img:first-child {
+		}
+		/* HEADER ------------------------------------------------------------------------------------------*/
+
+		/* NAV ---------------------------------------------------------------------------------------------*/
+		#main_nav {
+			width: 60%;
+			margin: 10px auto 0px;
+			justify-content: center;
+			padding-bottom: 20px;
+			border-bottom: 1px solid black;
+			word-break: normal;
+		}
+		#main_nav img {
+			width: 15px;
+			height: 15px;
+		}
+		.dropdown-button {
+			font-size: 25px;
+			font-weight: lighter;
+		}
+		.dropdown {
+			margin: 0px 10px;
+			position: relative;
+			width: 120px;
+			text-align: center;
+		}
+		.dropdown:hover {
+			background-color: rgba(220, 220, 220, 1.0);
+		}
+		.dropdown-menu {
+			width: 100%;
+			display: none;
+			list-style: none;
+			position: absolute;
+			z-index: 999;
+		}
+		.dropdown:hover .dropdown-menu {
+			display: block;
+		}
+		.dropdown-menu li {
+			display: block;
+			font-size: 25px;
+			padding: 5px 10px;
+			background-color: white;
+			text-align: center;
+		}
+		.dropdown-menu li:hover {
+			background-color: rgba(220, 220, 220, 1.0);
+			transition: 0.5s;
+		}
+		#main_nav div {
+			align-items: center;
+		}
+		/* NAV ---------------------------------------------------------------------------------------------*/
+
+		/* MAIN --------------------------------------------------------------------------------------------*/
+		#main {
+			width: 90%;
+			margin: 0px auto;
+		}
+		/* carousel 1 --------------------------------------------------------------------------------------*/
+		#carousel_container {
+			margin-top: 20px ;
+			margin-bottom: 40px;
+		}
+		.carousel {
+			width: 75vw;
+			height: 75vh;
+			position: relative;
+			margin: 0 auto ;
+		}
+
+		.carousel > ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.slide {
+			position: absolute;
+			inset: 0;
+			opacity: 0;
+			transition: 200ms opacity ease-in-out;
+			transition-delay: 200ms;
+		}
+
+		.slide > img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.slide[data-active] {
+			opacity: 1;
+			z-index: 1;
+			transition-delay: 0ms;
+		}
+
+		.carousel-button {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 2;
+			background: none;
+			border: none;
+			border-radius: 50%;
+			background-color: rgba(0, 0, 0, 0.4);
+		}
+		.carousel-button img {
+			position: relative;
+		}
+		#left {
+			right: 2px;
+			top: 1px;
+		}
+		#right {
+			left: 2px;
+			top: 1px;
+		}
+
+		.carousel-button:hover {
+			color: white;
+			background-color: rgba(0, 0, 0, .7);
+		}
+
+		.carousel-button:focus {
+			outline: 1px solid black;
+		}
+		.prev {
+			left: 1rem;
+		}
+		.fnext {
+			right: 1rem;
+		}
+		/* carousel 1 --------------------------------------------------------------------------------------*/
+		/* carousel 2 --------------------------------------------------------------------------------------*/
+		#carousel_container3 {
+			position: relative;
+		}
+		#carousel_container2 {
+			height: 50vh;
+			width: calc(900px  + 80px);
+			margin: 0px auto;
+			border-bottom: 1px solid black;
+			overflow: hidden;
+		}
+		.slider {
+			height: 80%;
+			margin: 0px auto;
+			align-items: center;
+			transition: transform 0.5s ease;
+			column-gap: 20px;
+		}
+		#carousel_container2 h1 {
+			text-align: center;
+		}
+		.slider-item {
+			background-color: blue;
+			width: 180px;
+			aspect-ratio: 1/1.5;
+			flex-shrink: 0;
+		}
+		.prev2 {
+			left: 7rem;
+		}
+		.next2 {
+			right: 7rem;
+		}
+		/* brands -----------------------------------------------------------------------------------------*/
+		#brands {
+			width: 90%;
+			height: fit-content;
+			margin: 40px auto 0px;
+			border-bottom: 1px solid black;
+		}
+		#brands .gh1 {
+			text-align: center;
+			font-size: 50px;
+			margin-bottom: 2%;
+		}
+		#brands button {
+			background-color: transparent;
+		}
+		.card {
+			width: calc(90vw / 3);
+			aspect-ratio: 1/1.25;
+			border-radius: 5%;
+			margin: 0px 0px 5%;
+			background-image: url(images/test-img.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+		.logo {
+			margin-left: 5%;
+			margin-top: 5%;
+			border-radius: 50%;
+			width: 5vw;
+			aspect-ratio: 1;
+			background-color: red;
+		}
+		.card-text {
+			font-size: 2vh;
+			align-items: center;
+			background-color: rgba(240, 240, 240, 1.0);
+			border-bottom-left-radius: 2vh 2vh;
+			border-bottom-right-radius: 2vh 2vh;
+			width: 100%;
+			height: 9vh;
+			top: 100%;
+			position: sticky;
+			bottom: 0;
+		}
+		.card-text h1 {
+			margin-left: 1vw;
+		}
+		.next {
+			width: 1vw;
+			margin-left: 9vw;
+		}
+		/*brands ------------------------------------------------------------------------------------------*/
+		/*benefits ----------------------------------------------------------------------------------------*/
+		#benefits h1 {
+			text-align: center;
+			margin-top: 40px;
+		}
+		#benefits {
+			width: 90%;
+			margin: 0px auto;
+			height: 200px;
+			background-color: green;
+		}
+		#benefits h2 {
+			text-align: center;
+		}
+		#benefits .container {
+			margin-top: 20px;
+		}
+	</style>
+	<title>NewTrend</title>
+</head>
+<!-- Chlape JS je úplná pičovina, musím to ešte dorobiť a ide ma z toho jebnúť -->
+<body>
+<header class="d-flex">
+	<form  id="searchbar" class="d-flex col" action="">
+
+
+		<button id="icon" type="submit"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="42px" height="42px"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"/></svg>
+		</button>
+		<input id="search" class="search" type="text" placeholder="Search." name="b">
+		<p id="searchOptions"></p>
+	</form>
+	<div id="logo" class="col">
+		<h1>NewTrend</h1>
+	</div>
+	<div id="user" class="col d-flex gap2">
+		<img src="images/shopping-cart.png">
+		<a class="mar-1" href="/userProfile" title="User"><img th:src="'images/' + ${@currentUserUtil.getAuthenticatedUser().getImage().getId()}" src="../static/images/user.png" title="User" width="42px" height="42px"></a>
+		<img src="images/nav.svg">
+	</div>
+</header>
+<nav id="main_nav" class="d-flex gap4">
+	<div class="d-flex">
+		<div class="dropdown rotate180">
+			<a href="#" class="dropdown-button">
+				Hats <img src="images/down-arrow.svg">
+			</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">čapica</a></li>
+				<li><a class="dropdown-item" href="#">druhá čapica</a></li>
+				<li><a class="dropdown-item" href="#">tretia čapica</a></li>
+			</ul>
+		</div>
+		<div class="dropdown rotate180">
+			<a href="#" class="dropdown-button">
+				T-Shirts <img src="images/down-arrow.svg">
+			</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">tričko</a></li>
+				<li><a class="dropdown-item" href="#">iné tričko</a></li>
+				<li><a class="dropdown-item" href="#">a dáke tričko</a></li>
+			</ul>
+		</div>
+		<div class="dropdown rotate180">
+			<a href="#" class="dropdown-button">
+				Brands <img src="images/down-arrow.svg">
+			</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">už ma to nebaví</a></li>
+				<li><a class="dropdown-item" href="#">Another action</a></li>
+				<li><a class="dropdown-item" href="#">Something else here</a></li>
+			</ul>
+		</div>
+		<div class="dropdown rotate180">
+			<a href="#" class="dropdown-button" type="button">
+				Hoodies <img src="images/down-arrow.svg">
+			</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Action</a></li>
+				<li><a class="dropdown-item" href="#">Another action</a></li>
+				<li><a class="dropdown-item" href="#">Something else here</a></li>
+			</ul>
+		</div>
+		<div class="dropdown rotate180">
+			<a href="#" class="dropdown-button">
+				Jeans <img src="images/down-arrow.svg">
+			</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Action</a></li>
+				<li><a class="dropdown-item" href="#">Another action</a></li>
+				<li><a class="dropdown-item" href="#">Something else here</a></li>
+			</ul>
+		</div>
+
+	</div>
+</nav>
+<div id="main">
+	<div id="carousel_container">
+		<div class="carousel"data-carousel>
+			<button class="carousel-button prev" data-carousel-button="prev"><img id="left" src="images/left-arrow-white.svg" width="20px" height="20px"></button>
+			<ul data-slides>
+				<li class="slide" data-active><img src="images/test-img.jpg"></li>
+				<li class="slide"><img src="images/test.jpg"></li>
+				<li class="slide"><img src="images/social.png"></li>
+			</ul>
+			<button class="carousel-button fnext" data-carousel-button="next"><img id="right" src="images/right-arrow-white.svg" width="20px" height="20px"></button>
+		</div>
+	</div>
+	<!-- tu vôbec netuším čo robím, lebo na to používam bootstrap, musím to prerobiť -->
+	<section id="carousel_container3">
+		<button id="prev" class="carousel-button prev2"><img id="left" src="images/left-arrow-white.svg" width="20px" height="20px"></button>
+		<div id="carousel_container2">
+			<h1 class="gh1">Popular</h1>
+			<div class="slider d-flex">
+				<div class="slider-item">1</div>
+				<div class="slider-item">2</div>
+				<div class="slider-item">3</div>
+				<div class="slider-item">4</div>
+				<div class="slider-item">5</div>
+				<div class="slider-item">6</div>
+				<div class="slider-item">7</div>
+				<div class="slider-item">8</div>
+				<div class="slider-item">9</div>
+				<div class="slider-item">10</div>
+				<div class="slider-item">11</div>
+				<div class="slider-item">12</div>
+				<div class="slider-item">13</div>
+				<div class="slider-item">14</div>
+				<div class="slider-item">15</div>
+				<div class="slider-item">16</div>
+				<div class="slider-item">17</div>
+				<div class="slider-item">18</div>
+				<div class="slider-item">19</div>
+				<div class="slider-item">20</div>
+				<div class="slider-item">21</div>
+				<div class="slider-item">22</div>
+				<div class="slider-item">23</div>
+				<div class="slider-item">24</div>
+				<div class="slider-item">25</div>
+			</div>
+		</div>
+		<button id="next" class="carousel-button next2"><img id="right" src="images/right-arrow-white.svg" width="20px" height="20px"></button>
+	</section>
+	<div id="brands">
+		<h1 class="gh1">Brands</h1>
+		<div class="container">
+			<div class="d-flex row gap5">
+				<a href="#"class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+			</div>
+			<div class="d-flex row gap5">
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+			</div>
+			<div class="d-flex row gap5">
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+			</div>
+			<div class="d-flex row gap5">
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+				<a href="#" class="card">
+					<div class="logo"></div>
+					<div class="d-flex card-text ">
+						<h1>Jožkov dizajn</h1>
+						<button class="next"><img src="images/right-arrow.svg"></button>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="benefits">
+		<h1 class="gh1">Benefits</h1>
+		<div class="container d-flex">
+			<div class="col">
+				<h2>High quality</h2>
+			</div>
+			<div class="col">
+				<h2>Global access</h2>
+			</div>
+			<div class="col">
+				<h2>Original</h2>
+			</div>
+			<div class="col">
+				<h2>Fast shipping</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<footer>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+	const slider = document.querySelector('.slider');
+	const prevButton = document.getElementById('prev');
+	const nextButton = document.getElementById('next');
+	const sliderItems = document.querySelectorAll('.slider-item');
+	const itemWidth = sliderItems[0].offsetWidth + parseInt(getComputedStyle(sliderItems[0]).marginRight);
+
+	let currentPosition = 0;
+
+	nextButton.addEventListener('click', () => {
+		if (currentPosition > -(sliderItems.length - 5) * itemWidth) {
+			currentPosition -= itemWidth;
+			slider.style.transform = `translateX(${currentPosition}px)`;
+		}
+	});
+
+	prevButton.addEventListener('click', () => {
+		if (currentPosition < 0) {
+			currentPosition += itemWidth;
+			slider.style.transform = `translateX(${currentPosition}px)`;
+		}
+	});
+</script>
+
+<script>
+	let searchBar = document.getElementById("search");
+	let searchOptions = document.getElementById("searchOptions");
+
+	searchBar.addEventListener('input', () => {
+		fetch(`/search?query=${encodeURIComponent(searchBar.value)}`, {
+			method: 'GET',
+		})
+				.then(response => response.json())
+				.then(data => {
+
+					searchOptions.innerHTML = "";
+					data.forEach(product => {
+						let productLink = document.createElement('a');
+						productLink.target = "blank"
+						productLink.text = product.name;
+						productLink.href = `/product/${product.name}`;
+						let productImage = document.createElement('img');
+						productImage.src = `/images/${product.mainImage.id}`;
+						productImage.width = 100;
+						productImage.height = 100;
+						productLink.appendChild(productImage);
+						searchOptions.appendChild(productLink);
+
+					});
+				})
+				.catch(error => {
+					console.error('error:', error);
+				});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    text-align: center;
+    font-size: 14px;
+    font-family: Calibri, Verdana, sans-serif;
+    color: #666;
+    width: 1350px;
+    margin: 0 auto;
+}
+.content {
+}
+header {
+    height: 110px;
+    border-bottom: 1px solid black;
+}
+.d-flex {
+    display: flex;
+}
+.col {
+    flex: 1;
+}
+.col2 {
+    flex: 9;
+}
+#logo {
+    text-align: left;
+    margin-left: 5rem;
+    margin-top: 15px;
+}
+#searchbar {
+    margin-top: 45px;
+    margin-left: 15rem;
+
+}
+#searchbar button {
+    border: 0px;
+    background-color: transparent;
+}
+#searchbar button:hover {
+    cursor: pointer;
+}
+.search {
+    border: 2px solid black;
+    border-radius: 60px;
+    width: 250px;
+    padding: 10px 15px;
+    display: flex;
+    margin-left: 0px;
+}
+input {
+    border: 0px;
+}
+form {
+    width: 350px;
+}
+#social {
+    margin-top: 45px;
+    margin-left: 16.5%;
+    display: flex;
+    align-items:center;
+}
+.mar-1 {
+    flex: 0.2;
+    margin: 0px 7px 15px;
+}
+.line {
+    content: "";
+    width: 1px;
+    height: 22px;
+    background-color: black;
+    display: block;
+    margin-bottom: 10px;
+}
+#sold {
+    height: 70px;
+    border-bottom: 1px solid black;
+}
+#trend {
+    height: 350px;
+    border-bottom: 1px solid black;
+}
+#benefits {
+    display: flex;
+    width: 1000px;
+    margin-left: 175px;
+    margin-bottom: 40px;
+}
+#h1-b {
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-weight: lighter;
+    font-size: 30px;
+}
+#benefits h2 {
+    color: black;
+    font-weight: lighter;
+    margin-top: 5px;
+}
+.img-b {
+    padding: 10px;
+    border-right: 1px solid black;
+}
+.img-b:last-child {
+    border-right: 0px;
+}
+#img1b {
+    flex: 1;
+}
+#img1b img {
+    margin-top: 12px;
+    height: 70%;
+    width: 60%;
+}
+#img2b {
+    flex: 1;
+}
+#img2b img {
+    margin-top: 12px;
+    height: 70%;
+    width: 60%;
+}
+#img3b {
+    flex: 0.7;
+}
+#img3b img {
+    height: 70%;
+    margin-top: 12px;
+}
+#img4b {
+    flex: 0.8;
+}
+#img4b img {
+    margin-top: 10px;
+}
+#img5b {
+    flex: 1;
+}
+#img5b img {
+    margin-top: 10px;
+}
+#h1-m {
+    color: black;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+#marketplace {
+    width: 600px;
+    height: 600px;
+    margin-left:  calc((1350px - 600px) / 2 );
+}
+.box {
+    border: 2px solid lightgreen;
+    background-image: linear-gradient(to top, white, rgba(0, 0, 0, 0.1));
+    margin: 20px;
+    height: 250px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2), 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+}
+.box h2 {
+    color: black;
+    font-weight: lighter;
+    font-size: 35px;
+}
+.img-m {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.box:hover {
+    background-color: lightgreen;
+}

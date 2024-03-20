@@ -1,0 +1,238 @@
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+button {
+	border: none;
+	background-color: inherit;
+}
+button:hover {
+	cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  text-align: center;
+  font-size: 14px;
+  font-family:Calibri, Verdana, sans-serif;
+  margin: 0 auto;
+  width: 1350px;
+}
+/*header ----------------------------------------------*/
+header {
+  height: 110px;
+  border-bottom: 1px solid black;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  z-index: 1;
+}
+.d-flex {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+.col2 {
+  flex: 9;
+}
+#logo {
+  text-align: left;
+  margin-left: 15rem;
+  margin-top: 15px;
+  order: 2;
+}
+#logo_img {
+  width: 300px;
+  height: 90px;
+}
+#part2 {
+  order: 1;
+}
+#searchbar {
+  margin-top: 45px;
+  margin-left: 5rem;
+}
+#searchbar button {
+  border: 0px;
+  background-color: transparent;
+}
+#searchbar button:hover {
+  cursor: pointer;
+}
+.search {
+  border: 2px solid black;
+  border-radius: 60px;
+  width: 250px;
+  padding: 10px 15px;
+  display: flex;
+  margin-left: 0px;
+}
+input {
+  border: 0px;
+}
+form {
+  width: 350px;
+}
+#social {
+  margin-top: 45px;
+  margin-left: 15%;
+  display: flex;
+  align-items:center;
+  order: 3;
+}
+.mar-1 {
+  width: 42px;
+  margin: 0px 10px 15px;
+}
+.line {
+  content: "";
+  width: 1px;
+  height: 24px;
+  background-color: black;
+  display: block;
+  margin-bottom: 10px;
+}
+/* header --------------------------------------------------- */
+#main {
+	padding-bottom: 40px ;
+	border-bottom: 1px solid black;
+}
+.l-item {
+  border: 1px solid grey;
+  background-color: white;
+  margin: 10px;
+  height: 160px;
+  width: 160px;
+  transition: 0.4s;
+}
+.l-item:hover {
+	background-color: lightgrey;
+}
+#brands button {
+  padding: 5px 10px;
+  margin: 5px;
+  font-size:20px;
+  font-weight: lighter;
+}
+#bg {
+  width: 800px;
+  height: 840px;
+  margin: 0px auto;
+  background-image: url(images/ShoesBorder1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+#filters {
+  font-size: 1rem;
+  font-weight: lighter;
+  border: 1px solid lightgrey;
+  padding: 10px 5px;
+  position: relative;
+  top: 60px;
+}
+#s-list {
+  width: fit-content;
+  height: fit-content;
+  margin: 0px auto 0px;
+  padding-top: 80px;
+}
+#nav {
+	font-size: 20px;
+	margin-top: 20px;
+	position: sticky;
+	top: 110px;
+	background-color: white;
+	text-align: left;
+	z-index: 1;
+}
+#nav a:hover {
+	color: lightgreen;
+	transition: 0.2s;
+}
+#page_button {
+  width: 200px;
+  height: fit-content;
+  margin: 15px auto 0px;
+  align-content: space-between;
+  column-gap: 2px;
+  flex-wrap: wrap;
+  color: rgba(9, 129, 54, 1.0);
+  font-weight: bold;
+}
+#page_button p {
+  padding:  5px 0px;
+}
+#page_button a {
+  padding: 5px 10px;
+}
+#active {
+  color: white;
+  background-color: rgba(9, 129, 54, 1.0);
+}
+/* Green (9, 129, 54) */
+/* footer------------------------------------------------------------- */ 
+#f_info {
+  width: 800px;
+  margin: 20px auto 20px;
+  color: black;
+}
+#f_info h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+#f_info a {
+  font-size: 20px;
+  font-weight: lighter;
+}
+#f_info a:hover {
+  text-decoration: underline;
+}
+#sell {
+  flex: 1;
+
+}
+#sell a {
+  display: block;
+  width: 160px;
+  margin: 0px auto 5px;
+}
+#help {
+  flex: 1;
+}
+#help a {
+  display: block;
+  width: 180px;
+  margin: 0px auto 5px;
+}
+#guide {
+  flex: 1;
+}
+#guide a {
+  display: block;
+  width: 140px;
+  margin: 0px auto 5px;
+}
+#guide a:last-child {
+  width: fit-content;
+}
+#links {
+  margin: 25px auto 0px;
+  column-gap: 10px;
+  width: 190px;
+}
+#nest {
+  width: 800px;
+  margin: 0px auto;
+}
+#socials {
+  padding-top: 20px;
+  border-top: 1px solid black;
+}
+/* footer ------------------------------------------------------------------------------------------*/

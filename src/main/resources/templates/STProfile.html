@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign up</title>
+<style>
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  text-align: center;
+  font-size: 14px;
+  font-family: Calibri, Verdana, sans-serif;
+  color: black;
+  width: 1350px;
+  margin: 0px auto;
+}
+.d-flex {
+	display: flex;
+}
+#i-f {
+	margin:  10% 0px 0px;
+	width: 200px;
+}
+#i-f h1 {
+	font-size: 45px;
+	font-weight: lighter;
+	margin-bottom: 25px;
+}
+.i-field {
+	display: block;
+	border: none;
+	border-bottom: 1px solid black;
+	width: 200px;
+	margin-bottom: 20px;
+	padding: 10px 15px;
+	font-size: 1rem;
+}
+.i-field:focus {
+	outline: none;
+}
+.i-field:last-child {
+	margin-bottom: 30px;
+}
+#button1 {
+	background-color: rgb(20, 150, 20, 1.0);
+	color: white;
+	border: none;
+	width: 200px;
+	padding: 10px 0px;
+	margin-bottom:20px ;
+}
+#button1 h2 {
+	font-weight: lighter;
+	font-size: 15px;
+}
+#button1:hover {
+	color: rgb(20, 150, 20, 1.0);
+	background-color: white;
+	cursor: pointer;
+	border: 1px solid rgb(20, 150, 20, 1.0);
+	transition: .5s;
+}
+#button2 {
+	background-color: white;
+	border: none;
+	font-weight: bold;
+	color: rgb(20, 150, 20, 1.0);
+}
+#button2:hover {
+	text-decoration:underline ;
+	cursor: pointer;
+}
+#icon {
+	margin: 80px 100px 0px calc(50% - 200px);
+}
+
+
+
+
+</style>
+</head>
+<body>
+	<div class="d-flex">
+	<a href="STIndex.html" id="icon" title="cancel">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30" height="30" viewBox="0 0 256 256" xml:space="preserve">
+
+		<defs>
+		</defs>
+		<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+		<path d="M 6 90 c -1.536 0 -3.071 -0.586 -4.243 -1.758 c -2.343 -2.343 -2.343 -6.142 0 -8.484 l 78 -78 c 2.342 -2.343 6.143 -2.343 8.484 0 c 2.344 2.343 2.344 6.142 0 8.485 l -78 78 C 9.071 89.414 7.536 90 6 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+		<path d="M 84 90 c -1.535 0 -3.071 -0.586 -4.242 -1.758 l -78 -78 c -2.343 -2.343 -2.343 -6.142 0 -8.485 c 2.343 -2.343 6.143 -2.343 8.485 0 l 78 78 c 2.344 2.343 2.344 6.142 0 8.484 C 87.071 89.414 85.535 90 84 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+		</g>
+		</svg>
+	</a>
+	<div id="i-f">
+		<h1>Sign up</h1>
+			<form th:action="@{/api/v1/user/registration}" method="POST" th:object="${user}">
+
+				<input class="i-field" type="text" id="username" name="username"  placeholder="User Name" th:field="*{username}">
+				<input class="i-field" type="text"  placeholder="Email" th:field="*{email}">
+				<input style="" class="i-field" type="password"  placeholder="Password"  th:field="*{password}">
+				<input style="" class="i-field" type="text"  placeholder="city"  th:field="*{residence.city}">
+				<input style="" class="i-field" type="text"  placeholder="street"  th:field="*{residence.street}">
+
+				<button id="button1" type="submit">
+				<h2>Sign up</h2>
+				</button>
+			</form>
+
+			<div>
+				already a member? <button id="button2"><a HREF="/login"> Log in</a></button>
+			</div>
+
+
+	</div>
+</div>
+
+
+</body>
+</html>

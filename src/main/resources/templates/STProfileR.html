@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* basics*/
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        body {
+            text-align: center;
+            font-size: 14px;
+            font-family: Calibri, Verdana, sans-serif;
+            color: black;
+            width: 1350px;
+            margin: 0 auto;
+        }
+        /*basics----------------------------------------------------------------------------------------------------------*/
+
+        /*header*/
+        header {
+            height: 110px;
+            border-bottom: 1px solid black;
+            position: sticky;
+            top: 0px;
+            background-color: white;
+        }
+        .d-flex {
+            display: flex;
+        }
+        .col {
+            flex: 1;
+        }
+        .col2 {
+            flex: 9;
+        }
+        #logo {
+            text-align: left;
+            margin-left: 5rem;
+            margin-top: 15px;
+        }
+        #searchbar {
+            margin-top: 45px;
+            margin-left: 15rem;
+
+        }
+        #searchbar button {
+            border: 0px;
+            background-color: transparent;
+        }
+        #searchbar button:hover {
+            cursor: pointer;
+        }
+        .search {
+            border: 2px solid black;
+            border-radius: 60px;
+            width: 250px;
+            padding: 10px 15px;
+            display: flex;
+            margin-left: 0px;
+        }
+        input {
+            border: 0px;
+        }
+        form {
+            width: 350px;
+        }
+        #social {
+            margin-top: 45px;
+            margin-left: 16.5%;
+            display: flex;
+            align-items:center;
+        }
+        .mar-1 {
+            flex: 0.2;
+            margin: 0px 7px 15px;
+        }
+        .line {
+            content: "";
+            width: 1px;
+            height: 22px;
+            background-color: black;
+            display: block;
+            margin-bottom: 10px;
+        }
+        /* header----------------------------------------------------------------------------------------------------------------*/
+
+        /* navigation */
+        #nav {
+            font-size: 20px;
+            margin-top: 20px;
+            position: sticky;
+            top: 110px;
+            background-color: white;
+            border-bottom: 1px solid black;
+            text-align: left;
+            width: 122px;
+        }
+        #nav a:hover {
+            color: lightgreen;
+            transition: 0.2s;
+        }
+        /* navigation -----------------------------------------------------------------------------------------------------------*/
+        #container {
+            margin: 0px auto;
+            width: 900px;
+        }
+        #pfp {
+            border-radius: 8px;
+            background-color: white;
+            margin-left: 50px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .p-item {
+            margin-bottom: 60px;
+        }
+        #name {
+            padding-top: 60px;
+            font-size: 40px;
+            margin-left: 80px;
+            color: white;
+            font-weight: lighter;
+            width: 300px ;
+        }
+        #id {
+            color: rgba(210, 210, 210, 1.0);
+            padding-top: 70px;
+            font-size: 30px;
+            margin-left: 80px;
+            width: 200px;
+        }
+        #maininf {
+            background-color: rgba(20, 150, 20, 0.8);
+            border-radius: 8px;
+            height: 180px;
+        }
+        #change {
+            background-color: rgba(20, 150, 20, 0.8);
+            color: white;
+            font-size: 20px;
+            border: none;
+            padding: 5px 15px;
+            margin-left: 180px;
+        }
+        #eye {
+            margin-top: 8px;
+        }
+        #change:hover {
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid rgba(20, 150, 20, 0.8);
+            color: rgba(20, 150, 20, 0.8);
+            transition: 0.5s;
+        }
+        .inf1 {
+            margin-left: 50px;
+            font-size: 25px;
+            width: 150px;
+            text-align: left;
+        }
+        .inf2 {
+            margin-left: 80px;
+            width: 260px;
+            padding-top: 5px;
+            text-align: left;
+        }
+        .inf2p {
+            margin-left: 80px;
+            width: 240px;
+            padding-top: 5px;
+            text-align: left;
+        }
+        .def {
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+        }
+        .l-item {
+            border: 2px solid lightgreen;
+            background-image: linear-gradient(to top, white, rgba(0, 0, 0, 0.1));
+            margin: 20px;
+            height: 180px;
+            box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2), 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.4s;
+            width: 180px;
+        }
+        .l-item:hover {
+            background-color: lightgreen;
+        }
+        #inventory {
+        }
+        #inventory h2 {
+            font-size: 30px;
+            font-weight: lighter;
+        }
+        #inv-c {
+            margin: 0px auto;
+            width: 660px;
+            height: 220px ;
+        }
+        .s-m {
+            background-color: rgba(20, 150, 20, 0.8);
+            color: white;
+            font-size: 20px;
+            border: none;
+            padding: 5px 15px;
+
+        }
+        .s-m:hover {
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid rgba(20, 150, 20, 0.8);
+            color: rgba(20, 150, 20, 0.8);
+            transition: 0.5s;
+        }
+        #passwordChecker {
+            display: ;
+        }
+    </style>
+    <title>Profile</title>
+</head>
+<body>
+<header class="d-flex">
+    <a href="STIndex.html"><div id="logo" class="col">
+        <img src="images/logo.svg" width="300px" height="90px" />
+    </div> </a>
+    <div id="searchbar" class="col">
+        <form class="d-flex" action="">
+            <button class="col" type="submit"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="42px" height="42px"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"/></svg>
+            </button>
+            <input class="search col2" type="text" placeholder="Search." name="b">
+        </form>
+    </div>
+    <div id="social" class="col">
+        <a class="mar-1" href="STAdd.html" title="Add"> <img src="images/plus.png" title="plus" width="42px" height="42px"></a>
+        <div class="line"></div>
+        <a class="mar-1" href="STCart.html" title="Cart"> <img src="images/shopping-cart.png" title="cart" width="42px" height="42px"></a>
+        <div class="line"></div>
+        <a class="mar-1" href="STProfile.html" title="User"><img src="images/user.png" title="User" width="42px" height="42px"></a>
+</header>
+<nav id="nav">
+    <a href="STIndex.html">Home</a> >
+    <a href="STProfileR.html">Profile </a>
+</nav>
+<div id="container">
+    <div class="d-flex p-item " id="maininf">
+        <img id="pfp" src="images/plus.png" title="profile" width="100px" height="100px">
+        <h2 id="name">Jožko Vajda</h2>
+        <h2 id="id">#User420695</h2>
+    </div>
+    <div id="email" class="d-flex p-item def">
+        <h2 class="inf1"> Email Address </h2>
+        <h2 class="inf2"> jozko.vajda@gmail.com </h2>
+        <button id="change">Edit</button>
+    </div>
+    <div id="password" class="d-flex p-item def">
+        <h2 class="inf1"> Password </h2>
+        <h2 class="inf2p" id="passwordH2" > jozkovajda123 </h2> <input id="passwordChecker" type="checkbox" checked ><img  id="eye" src="images/eye.svg" width="20px" height="20px"></input>
+        <button id="change">Edit</button>
+    </div>
+    <div id="address" class="d-flex p-item def">
+        <h2 class="inf1"> My Address </h2>
+        <h2 class="inf2">  Vajdova ulica 11 Praha 974 06 </h2>
+        <button id="change">Edit</button>
+    </div>
+    <div id="cards" class="d-flex p-item def">
+        <h2 class="inf1">Credit cards</h2>
+        <h2 class="inf2">  /credit card info/ </h2>
+        <button id="change">Edit</button>
+    </div>
+    <div id="inventory" class="p-item">
+        <h2> My inventory </h2>
+        <div id="inv-c">
+            <div class="d-flex">
+                <a class="l-item" href="STItem.html"></a>
+                <a class="l-item" href="STItem.html"></a>
+                <a class="l-item" href="STItem.html"></a>
+            </div>
+        </div>
+        <button class="s-m"> See more</button>
+    </div>
+    <div id="inventory" class="p-item">
+        <h2>Active bids </h2>
+        <div id="inv-c">
+            <div class="d-flex">
+                <a class="l-item" href="STItem.html"></a>
+                <a class="l-item" href="STItem.html"></a>
+                <a class="l-item" href="STItem.html"></a>
+            </div>
+        </div>
+        <button class="s-m"> See more</button>
+    </div>
+    <div id="inventory" class="p-item">
+        <h2> My favourites </h2>
+        <div id="inv-c">
+            <div class="d-flex">
+                <a class="l-item" href="STItem.html"></a>
+                <a class="l-item" href="STItem.html"></a>
+                <a class="l-item" href="STItem.html"></a>
+            </div>
+        </div>
+        <button class="s-m"> See more</button>
+    </div>
+
+</div>
+<script>
+
+    function getCookieValue(cookieName) {
+
+        var cookiesArray = document.cookie.split(';');
+
+
+        for (var i = 0; i < cookiesArray.length; i++) {
+            var cookie = cookiesArray[i].trim();
+
+            if (cookie.indexOf(cookieName + '=') === 0) {
+
+                return cookie.substring(cookieName.length + 1, cookie.length);
+            }
+        }
+        return null;
+    }
+
+
+    let myCookieValue = getCookieValue('Username');
+
+    let cookies = myCookieValue;
+
+
+    document.getElementById('passwordH2').innerHTML = myCookieValue;
+    let userPassword = document.getElementById('passwordH2').textContent;
+    let showPasswordCheckbox = document.getElementById('passwordChecker');
+    let passwordHeading = document.getElementById('passwordH2');
+
+    showPasswordCheckbox.addEventListener('change', () => {
+
+        passwordHeading.textContent = showPasswordCheckbox.checked ? userPassword : '*'.repeat(passwordHeading.textContent.length);
+    });
+</script>
+</body>
+</html>

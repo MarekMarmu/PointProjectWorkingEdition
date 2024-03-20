@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>List Item</title>
+</head>
+<body>
+<header class="d-flex">
+
+</header>
+<nav id="nav">
+
+</nav>
+<h1 id="name">/Shoe Name/</h1>
+<div class="container d-flex">
+	<div id="images" class="box">
+
+	</div>
+
+	<div>
+		<div id="size">
+			<h2>Sizes</h2>
+			<div>
+				<select id="sizeSelector" name="size">
+					<!-- Naplnění selectu možnostmi velikostí z produků -->
+					<option th:each="product: ${products}" th:value="${product.size}" th:text="${product.size.name()}"></option>
+				</select>
+			</div>
+		</div>
+
+		<div id="color">
+			<h2>Colors</h2>
+			<div>
+				<select id="colorSelector" name="color">
+					<!-- Naplnění selectu možnostmi barev z produků -->
+					<option th:each="product: ${products}" th:value="${product.color}" th:text="${product.color.name()}"></option>
+				</select>
+			</div>
+		</div>
+
+		<div id="colorContainer"></div>
+
+		<div id="price">
+			<h2>Price: <span id="selectedProductPrice">/price/</span></h2>
+		</div>
+
+		<div id="numberOfPieces">
+			<h2>Number of Pieces: <span id="selectedProductPieces">//</span></h2>
+		</div>
+	</div>
+</div>
+<div>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+	<button id="addToCartButton">Add to Cart</button>
+</div>
+
+<script th:inline="javascript" src="/templates/ProductUpdater.js">
+
+
+</script>
+
+</body>
+</html>

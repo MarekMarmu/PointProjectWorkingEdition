@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Přihlášení</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}</style>
+<body>
+
+
+
+<h2>Přihlášení</h2>
+<form action="/api/v1/user/login" method="POST" th:object="${user}">
+    <div>
+        <label for="username">Uživatelské jméno</label>
+        <input id="username" name="username" th:field="*{username}" type="text"/>
+    </div>
+    <div>
+        <label for="password">Heslo</label>
+        <input type="password" id="password" name="password" th:field="*{password}" />
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <button id="eye" style="height: 200px; width: 200px"></button>
+    </div>
+    <div>
+        <input type="checkbox" class="form-check-input" name="remember-me" id="remember-me">
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+<a href="/registration">new Here? register</a>
+</body>
+
+<script>
+    let password = document.getElementById('password');
+    let eye = document.getElementById('eye');
+
+    eye.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        if (password.type === "password") {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+    });
+
+</script>
+
+</html>

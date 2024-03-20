@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider</title>
+  <style>
+    .slider-container {
+      width: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slider-item {
+      flex: 0 0 60px; /* Šířka jedné položky */
+      height: 60px; /* Výška jedné položky */
+      margin-right: 10px; /* Odsazení mezi položkami */
+    }
+
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .slider-controls button {
+      cursor: pointer;
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="slider-container">
+  <div class="slider">
+    <div class="slider-item">1</div>
+    <div class="slider-item">2</div>
+    <div class="slider-item">3</div>
+    <div class="slider-item">4</div>
+    <div class="slider-item">5</div>
+    <div class="slider-item">6</div>
+    <div class="slider-item">7</div>
+    <div class="slider-item">8</div>
+    <div class="slider-item">9</div>
+    <div class="slider-item">10</div>
+    <div class="slider-item">11</div>
+    <div class="slider-item">12</div>
+    <div class="slider-item">13</div>
+    <div class="slider-item">14</div>
+    <div class="slider-item">15</div>
+    <div class="slider-item">16</div>
+    <div class="slider-item">17</div>
+    <div class="slider-item">18</div>
+    <div class="slider-item">19</div>
+    <div class="slider-item">20</div>
+  </div>
+</div>
+<div class="slider-controls">
+  <button id="prev">Předchozí</button>
+  <button id="next">Další</button>
+</div>
+
+<script>
+  const slider = document.querySelector('.slider');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+  const sliderItems = document.querySelectorAll('.slider-item');
+  const itemWidth = sliderItems[0].offsetWidth + parseInt(getComputedStyle(sliderItems[0]).marginRight);
+
+  let currentPosition = 0;
+
+  nextButton.addEventListener('click', () => {
+    if (currentPosition > -(sliderItems.length - 5) * itemWidth) {
+      currentPosition -= itemWidth;
+      slider.style.transform = `translateX(${currentPosition}px)`;
+    }
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (currentPosition < 0) {
+      currentPosition += itemWidth;
+      slider.style.transform = `translateX(${currentPosition}px)`;
+    }
+  });
+</script>
+</body>
+</html>

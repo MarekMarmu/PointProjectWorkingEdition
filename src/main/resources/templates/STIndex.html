@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="src/main/resources/templates/STIndex-css.css">
+	<title>Step Trader</title>
+</head>
+
+<style>
+	/* basics*/
+	* {
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	body {
+		text-align: center;
+		font-size: 14px;
+		font-family: Calibri, Verdana, sans-serif;
+		color: #666;
+		width: 1350px;
+		margin: 0 auto;
+	}
+	@import url(https://www.fontspace.com/neoteric-font-f21557);
+	/*basics----------------------------------------------------------------------------------------------------------*/
+
+	/*header*/
+	header {
+		height: 110px;
+		border-bottom: 1px solid black;
+		position: sticky;
+		top: 0px;
+		background-color: white;
+	}
+	.d-flex {
+		display: flex;
+	}
+	.col {
+		flex: 1;
+	}
+	.col2 {
+		flex: 9;
+	}
+	#logo {
+		text-align: left;
+		margin-left: 15rem;
+		margin-top: 15px;
+		order: 2;
+	}
+	#logo_img {
+		width: 300px;
+		height: 90px;
+	}
+	#part2 {
+		order: 1;
+	}
+	#searchbar {
+		margin-top: 45px;
+		margin-left: 5rem;
+	}
+	#searchbar button {
+		border: 0px;
+		background-color: transparent;
+	}
+	#searchbar button:hover {
+		cursor: pointer;
+	}
+	.search {
+		border: 2px solid black;
+		border-radius: 60px;
+		width: 250px;
+		padding: 10px 15px;
+		display: flex;
+		margin-left: 0px;
+	}
+	input {
+		border: 0px;
+	}
+	form {
+		width: 350px;
+	}
+	#social {
+		margin-top: 45px;
+		margin-left: 15%;
+		display: flex;
+		align-items:center;
+		order: 3;
+	}
+	.mar-1 {
+		width: 42px;
+		margin: 0px 10px 15px;
+	}
+	.line {
+		content: "";
+		width: 1px;
+		height: 24px;
+		background-color: black;
+		display: block;
+		margin-bottom: 10px;
+	}
+	/* header----------------------------------------------------------------------------------------------------------------*/
+
+	/*sold*/
+	#sold {
+		height: 150px;
+		border-bottom: 1px solid black;
+	}
+	/*sold---------------------------------------------------------------------------------------------------------------------*/
+
+	/*trend*/
+	#trend {
+		height: 350px;
+		border-bottom: 1px solid black;
+	}
+	/*trend---------------------------------------------------------------------------------------------------------------------*/
+
+	/*recommended  -----------------------------------------------------------------------------------------------------------*/
+	#recommended {
+		height: 220px;
+		border-bottom: 1px solid black;
+	}
+	#recommended h1 {
+		color: black;
+		font-weight: lighter;
+		margin: 15px 0px;
+		font-size: 30px;
+	}
+	.r-box {
+		border: 1px solid grey;
+		background-color: white;
+		height: 130px;
+		width: 130px;
+		transition: 0.4s;
+	}
+	.r-box:hover {
+		background-color: lightgrey;
+	}
+	#mar-2 {
+		margin-top: -20px;
+	}
+	.r-h2 {
+		color: black;
+		font-weight: lighter;
+		font-size: 15px;
+		text-align: left;
+		margin-left: 10px;
+	}
+	.img-r {
+
+	}
+	#recommended .d-flex {
+		column-gap: 30px;
+		width: fit-content;
+		margin: 0px auto;
+	}
+	/* recommended ---------------------------------------------------------------------------------------------------------------------- */
+	/*benefits*/
+	#bg5 {
+		background-image: url(images/benefitsBorder.svg);
+		background-size: cover;
+		width: 700px;
+		height: 610px;
+		margin: 15px auto 0px;
+	}
+	#row1 {
+		width: fit-content;
+		margin: 0px auto;
+		margin-bottom: 40px;
+	}
+	#border{
+		margin-top: 40px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid black;
+	}
+	#h1-b {
+		color: black;
+		width: fit-content;
+		margin: 0px auto 15px;
+		font-weight: lighter;
+		font-size: 30px;
+	}
+	#benefits h2 {
+		color: black;
+		font-weight: lighter;
+		margin-top: 5px;
+	}
+	#benefits p {
+		font-size: 16px;
+		margin-top: 5px;
+	}
+	.img-b {
+		padding: 10px;
+		border-right: 1px solid black;
+	}
+	.img-b:last-child {
+		border-right: 0px;
+	}
+	#img1b {
+		width: 200px;
+	}
+	#img1b img {
+		margin-top: 12px;
+		margin-bottom: 10px;
+		height: 85px;
+		width: 85px;
+	}
+	#img2b {
+		width: 200px;
+	}
+	#img2b img {
+		margin-top: 12px;
+		margin-bottom: 25px;
+		height: 72px;
+		width: 72px;
+	}
+	#img3b {
+		width: 200px;
+	}
+	#img3b img {
+		height: 72px;
+		width: 72px;
+		margin-top: 12px;
+		margin-bottom: 38px;
+	}
+	#img4b {
+		width: 200px;
+	}
+	#img4b img {
+		width: 120px;
+		height: 120px;
+	}
+	#img5b {
+		width: 200px;
+	}
+	#img5b img {
+		width: 120px;
+		height: 120px;
+		margin-bottom: 10px;
+	}
+	/*benefits---------------------------------------------------------------------------------------------------------------------*/
+
+	/*market*/
+	#h1-m {
+		color: black;
+		font-size: 40px;
+		margin-bottom: 50px;
+	}
+	#marketplace {
+		height: fit-content;
+		padding-bottom: 40px;
+		border-bottom: 1px solid black;
+	}
+	#marketplace a {
+		display: block;
+		width: 280px;
+		margin: 40px 0px 0px 40px;
+	}
+	#row {
+		width: fit-content;
+		margin: 0px auto 20px;
+	}
+	.gap4 {
+		column-gap: 40px;
+	}
+	#bg1 {
+		width: 360px;
+		height: 340px;
+		background-image: url(images/marketBorder1.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#bg2 {
+		width: 360px;
+		height: 340px;
+		background-image: url(images/marketBorder2.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#bg3 {
+		width: 360px;
+		height: 340px;
+		background-image: url(images/marketBorder3.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	#bg4 {
+		width: 360px;
+		height: 340px;
+		background-image: url(images/marketBorder4.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.box {
+		border: 1px solid grey;
+		background-color: white;
+		height: 260px;
+		width: 280px;
+		transition: 0.4s;
+	}
+	.box h2 {
+		color: black;
+		font-weight: lighter;
+		font-size: 35px;
+	}
+	.img-m {
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+	.box:hover {
+		background-color: lightgrey;
+	}
+	/*market-----------------------------------------------------------------------------------------------------------------------*/
+	/*footer*/
+	#f_info {
+		width: 800px;
+		margin: 20px auto 20px;
+		color: black;
+	}
+	#f_info h2 {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	#f_info a {
+		font-size: 20px;
+		font-weight: lighter;
+	}
+	#f_info a:hover {
+		text-decoration: underline;
+	}
+	#sell {
+		flex: 1;
+
+	}
+	#sell a {
+		display: block;
+		width: 160px;
+		margin: 0px auto 5px;
+	}
+	#help {
+		flex: 1;
+	}
+	#help a {
+		display: block;
+		width: 180px;
+		margin: 0px auto 5px;
+	}
+	#guide {
+		flex: 1;
+	}
+	#guide a {
+		display: block;
+		width: 140px;
+		margin: 0px auto 5px;
+	}
+	#guide a:last-child {
+		width: fit-content;
+	}
+	#links {
+		margin: 25px auto 0px;
+		column-gap: 10px;
+		width: 190px;
+	}
+	#nest {
+		width: 800px;
+		margin: 0px auto;
+	}
+	#socials {
+		padding-top: 20px;
+		border-top: 1px solid black;
+	}
+	/* phone screen ----------------------------------------------------------------------*/
+	@media (max-width:320px) {
+		body {
+			width: 280px;
+		}
+		header {
+			margin: 0 auto;
+			height: 300px;
+			flex-direction: column;
+			position: initial;
+		}
+		#logo_img {
+			width: 280px;
+			height: 84px;
+		}
+		#logo {
+			margin-left: 0px;
+			margin-top: 10px;
+		}
+		#searchbar {
+			margin-top: 20px;
+			margin-left: 0px;
+			width: 280px;
+			height: 40px;
+		}
+		#search_icon {
+			width: 40px;
+			height: 40px;
+		}
+		.search {
+			width: 240px;
+		}
+		#social {
+			width: 280px;
+			margin: 10px auto 0px;
+		}
+		.mar-1 {
+			margin: 45px 25px 0px;
+		}
+		.line {
+			width: 0px;
+		}
+		#benefits {
+			width: 240px;
+			overflow: auto;
+			scroll-snap-align: center;
+			scroll-snap-type: x mandatory;
+		}
+		#img1b {
+			width: 200px;
+		}
+		#img1b img {
+			height: 180px;
+			width: 180px;
+		}
+		#img2b {
+			width: 200px;
+		}
+		#img2b img {
+			height: 180px;
+			width: 180px;
+		}
+		#img3b {
+			width: 200px;
+		}
+		#img3b img {
+			height: 180px;
+			width: 180px;
+		}
+		#img4b {
+			width: 200px;
+		}
+		#img4b img {
+			height:180px;
+			width: 180px;
+			margin-top: 12px;
+			margin-bottom: 38px;
+		}
+		#img5b {
+			width: 200px;
+		}
+		#img5b img {
+			height: 180px;
+			width: 180px;
+			margin-top: 12px;
+			margin-bottom: 38px;
+		}
+		.img-b {
+			margin:0px 20px;
+			border: none;
+		}
+		#marketplace {
+			width: 280px;
+			height: fit-content;
+			row-gap: 40px;
+		}
+		#row {
+			flex-direction: column;
+			margin: 0px auto;
+		}
+		.gap4 {
+			row-gap: 40px;
+		}
+		.box {
+			width: 260px;
+			height: 240px;
+		}
+		#f_info {
+			flex-direction: column;
+			width: 280px;
+		}
+		#sell {
+			margin-bottom: 20px;
+		}
+		#help {
+			margin-bottom: 20px;
+		}
+
+	/* phone screen ---------------------------------------------------------------------*/
+</style>
+<body>
+	<header class="d-flex">
+		<a href="../../../../../../../Downloads/STIndex.html" id="logo">
+			<img id="logo_img" src="../static/images/logo.svg" />
+		</a> 
+		<div id="part2">
+			<form id="searchbar" class="d-flex" action="">
+				<button type="submit"><svg id="search_icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="42px" height="42px"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"/></svg> 
+				</button>
+				<input class="search col2" type="text" placeholder="Search." name="b">
+			</form>
+		</div>
+		<div id="social">
+			 <a class="mar-1" href="STCart.html" title="Cart"> <img src="../static/images/shopping-cart.png" title="cart" width="42px" height="42px"></a>
+			 <div class="line"></div>
+			 <a class="mar-1" href="../../../../../../../Downloads/STProfile.html" title="User"><img src="../static/images/user.png" title="User" width="42px" height="42px"></a>
+			 <div class="line"></div>
+			 <a class="mar-1" href="STAdd.html" title="Navigation"> <img src="images/navigation2.png" title="navigation" width="42px" height="42px"></a>
+		</div>
+	</header>
+	<div class="content">
+		<article id="sold">
+				
+		</article>
+		<article id="trend">
+				
+		</article>
+		<article id="recommended">
+			<h1>Popular</h1>
+			<div class="d-flex">
+				<a href="../../../../../../../Downloads/STItem.html">
+				<div class="r-box col">
+					<img class="img-r" src="../static/images/sneakers_icon.png" title="shoes" width="100px" height="100px">
+					<h2 class="r-h2" id="mar-2">Full shoe name</h2>
+					<h2 class="r-h2">Price &euro;</h2>
+				</div>
+			</a>
+			<a href="../../../../../../../Downloads/STItem.html">
+				<div class="r-box col">
+					<img class="img-r" src="../static/images/sneakers_icon.png" title="shoes" width="100px" height="100px">
+					<h2 class="r-h2" id="mar-2">Full shoe name</h2>
+					<h2 class="r-h2">Price &euro;</h2>
+				</div>
+			</a>
+			<a href="../../../../../../../Downloads/STItem.html">
+				<div class="r-box col">
+					<img class="img-r" src="../static/images/sneakers_icon.png" title="shoes" width="100px" height="100px">
+					<h2 class="r-h2" id="mar-2">Full shoe name</h2>
+					<h2 class="r-h2">Price &euro;</h2>
+				</div>
+			</a>
+			<a href="../../../../../../../Downloads/STItem.html">
+				<div class="r-box col">
+					<img class="img-r" src="../static/images/sneakers_icon.png" title="shoes" width="100px" height="100px">
+					<h2 class="r-h2" id="mar-2">Full shoe name</h2>
+					<h2 class="r-h2">Price &euro;</h2>
+				</div>
+			</a>
+			</div>
+		</article>
+		<div id="bg5">
+			<article id="benefits">
+				<h1 id="h1-b">Benefits</h1>
+				<div id="row1" class="d-flex">
+					<div class="img-b" id="img2b">
+						<img src="../static/images/sign_3257418.png">
+						<h2>Duty - Free</h2>
+						<p>You are <strong>exempt</strong> from <br> paying any import <strong>duties </strong><br><strong>or tariffs</strong></p>
+					</div>
+					<div class="img-b" id="img3b">
+						<img src="../static/images/shield.png">
+						<h2>Verified</h2>
+						<p>We care about <strong>originality</strong> <br> of our products</p>
+					</div>
+					<div class="img-b" id="img4b">
+						<img src="../static/images/cargo-truck_2311484.png">
+						<h2>Fast shipping</h2>
+						<p>Swift <strong>2-3 day</strong> delivery <br> across the EU</p>
+					</div>
+				</div>
+				<div id="row1" class="d-flex">
+					<div class="img-b" id="img1b">
+						<img  src="../static/images/inspecting.png">
+						<h2>Smooth Border Transit</h2>
+						<p>Experience <strong>swift</strong> and <br> <strong>stress-free</strong> EU <strong>shipping</strong></p>
+					</div>
+					<div class="img-b" id="img5b">
+						<img src="../static/images/contactless.png">
+						<h2>Contactless dealings</h2>
+						<p><strong>No interaction</strong> needed <br> use our services <strong>worry free</strong></p>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div id="border"></div>
+		<h1 id="h1-m"> Marketplace</h1>
+		<article id="marketplace">
+		<div class="d-flex gap4" id="row">
+			<div id="bg1">
+				<a href="STShoes.html">
+					<div class="box col">
+						<img class="img-m" src="../static/images/sneakers_icon.png" title="shoes" width="150px" height="150px">
+						<h2>Shoes</h2>
+					</div>
+				</a>
+			</div>
+			<div id="bg2">
+				<a href="STClothes.html">
+					<div class="box col">
+						<img class="img-m" src="../static/images/clothes_icon.png" title="shoes" width="150px" height="150px">
+						<h2>Clothing</h2>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="d-flex gap4" id="row">
+			<div id="bg3">
+				<a href="STAccessories.html">
+					<div class="box col">
+						<img class="img-m" src="../static/images/pendant.png" title="shoes" width="150px" height="150px">
+						<h2>Accessories</h2>
+					</div>
+				</a>
+			</div>
+			<div id="bg4">
+				<a href="STMore.html">
+					<div class="box col">
+						<img class="img-m" src="../static/images/more.png" title="shoes" width="150px" height="150px">
+						<h2>More</h2>
+					</div>
+				</a>
+			</div>
+		</div>
+	</article>
+	</div>
+	<footer>
+		<div class="d-flex" id="f_info">
+			<div id="sell">
+				<h2>Step Trader</h2>
+				<a href="">About us</a>
+				<a href="">Commercial terms</a>
+				<a href="">Privacy and policy terms</a>
+			</div>
+			<div id="help">
+				<h2>For You</h2>
+				<a href=""> Q&A</a>
+				<a href=""> Product returns and complaints</a>
+				<a href=""> Delivery and payment</a>
+			</div>
+			<div id="guide">
+				<h2>Contacts</h2>
+				<a href=""> Email</a>
+				<a href=""> Instagram</a>
+				<a href=""> Facebook</a>
+				<a href=""> TikTok</a>
+			</div>
+		</div>
+		<div id="socials">
+			<div class="d-flex" id="nest">
+				<div class="col">
+					
+				</div>
+				<div class="col">
+					<div id="links" class="d-flex">
+					<a href=""><img src="images/instagram.png" width="40px" height="40px"></a>
+					<a href=""><img src="images/facebook.png" width="40px" height="40px"></a>
+					<a href=""><img src="images/twitter.png" width="40px" height="40px"></a>
+					<a href=""><img src="images/youtube.png" width="40px" height="40px"></a>
+					</div>
+				</div>
+				<div class="col">
+					<a href=""> <img src="images/social.png" width="80px" height="80px"></a>
+				</div>
+			</div>
+		</div>
+
+
+	</footer>
+</body>
+</html>

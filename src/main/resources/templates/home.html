@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body {
+        text-align: center;
+        font-size: 14px;
+        font-family: Calibri, Verdana, sans-serif;
+        color: #666;
+        width: 1350px;
+        margin: 0 auto;
+    }
+    .content {
+    }
+    header {
+        height: 110px;
+        border-bottom: 1px solid black;
+    }
+    .d-flex {
+        display: flex;
+    }
+    .col {
+        flex: 1;
+    }
+    .col2 {
+        flex: 9;
+    }
+    #logo {
+        text-align: left;
+        margin-left: 5rem;
+        margin-top: 15px;
+    }
+    #searchbar {
+        margin-top: 45px;
+        margin-left: 15rem;
+
+    }
+    #searchbar button {
+        border: 0px;
+        background-color: transparent;
+    }
+    #searchbar button:hover {
+        cursor: pointer;
+    }
+    .search {
+        border: 2px solid black;
+        border-radius: 60px;
+        width: 250px;
+        padding: 10px 15px;
+        display: flex;
+        margin-left: 0px;
+    }
+    input {
+        border: 0px;
+    }
+    form {
+        width: 350px;
+    }
+    #social {
+        margin-top: 45px;
+        margin-left: 16.5%;
+        display: flex;
+        align-items:center;
+    }
+    .mar-1 {
+        flex: 0.2;
+        margin: 0px 7px 15px;
+    }
+    .line {
+        content: "";
+        width: 1px;
+        height: 22px;
+        background-color: black;
+        display: block;
+        margin-bottom: 10px;
+    }
+    #sold {
+        height: 70px;
+        border-bottom: 1px solid black;
+    }
+    #trend {
+        height: 350px;
+        border-bottom: 1px solid black;
+    }
+    #benefits {
+        display: flex;
+        width: 1000px;
+        margin-left: 175px;
+        margin-bottom: 40px;
+    }
+    #h1-b {
+        color: black;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        font-weight: lighter;
+        font-size: 30px;
+    }
+    #benefits h2 {
+        color: black;
+        font-weight: lighter;
+        margin-top: 5px;
+    }
+    .img-b {
+        padding: 10px;
+        border-right: 1px solid black;
+    }
+    .img-b:last-child {
+        border-right: 0px;
+    }
+    #img1b {
+        flex: 1;
+    }
+    #img1b img {
+        margin-top: 12px;
+        height: 70%;
+        width: 60%;
+    }
+    #img2b {
+        flex: 1;
+    }
+    #img2b img {
+        margin-top: 12px;
+        height: 70%;
+        width: 60%;
+    }
+    #img3b {
+        flex: 0.7;
+    }
+    #img3b img {
+        height: 70%;
+        margin-top: 12px;
+    }
+    #img4b {
+        flex: 0.8;
+    }
+    #img4b img {
+        margin-top: 10px;
+    }
+    #img5b {
+        flex: 1;
+    }
+    #img5b img {
+        margin-top: 10px;
+    }
+    #h1-m {
+        color: black;
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+    #marketplace {
+        width: 600px;
+        height: 600px;
+        margin-left:  calc((1350px - 600px) / 2 );
+    }
+    .box {
+        border: 2px solid lightgreen;
+        background-image: linear-gradient(to top, white, rgba(0, 0, 0, 0.1));
+        margin: 20px;
+        height: 250px;
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2), 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.4s;
+    }
+    .box h2 {
+        color: black;
+        font-weight: lighter;
+        font-size: 35px;
+    }
+    .img-m {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .box:hover {
+        background-color: lightgreen;
+    }
+</style>
+    <title>Step Trader</title>
+</head>
+<body>
+<header class="d-flex">
+    <div id="logo" class="col">
+        <embed src="Logo.html" type="image/svg+xml"/>
+    </div>
+    <div id="searchbar" class="col">
+        <form class="d-flex" action="">
+            <button class="col" type="submit"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="42px" height="42px"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"/></svg>
+            </button>
+            <input class="search col2" type="text" placeholder="Search." name="b">
+        </form>
+    </div>
+    <div id="social" class="col">
+        <a class="mar-1" href="STAdd.html" title="Add"> <img src="../static/images/plus.png" title="plus" width="42px" height="42px"></a>
+        <div class="line"></div>
+        <a class="mar-1" href="STCart.html" title="Cart"> <img src="../static/images/shopping-cart.png" title="cart" width="42px" height="42px"></a>
+        <div class="line"></div>
+        <a class="mar-1" href="/userProfile" title="User"><img th:src="'images/' + ${@currentUserUtil.getAuthenticatedUser().getImage().getId()}" src="../static/images/user.png" title="User" width="42px" height="42px"></a>
+    </div>
+</header>
+<div class="content">
+    <article id="sold">
+
+    </article>
+    <article id="trend">
+
+    </article>
+    <h1 id="h1-b">Benefits</h1>
+    <article id="benefits">
+        <div class="img-b" id="img1b">
+            <img src="../static/images/inspecting.png" title="inspecting" width="120px" height="120px">
+            <h2>No border inspections</h2>
+        </div>
+        <div class="img-b" id="img2b">
+            <img src="../static/images/sign_3257418.png" title="tax" width="120px" height="120px">
+            <h2>Free of custom duties</h2>
+        </div>
+        <div class="img-b" id="img3b">
+            <img src="../static/images/shield.png" title="verified" width="120px" height="120px">
+            <h2>100% Verified</h2>
+        </div>
+        <div class="img-b" id="img4b">
+            <img src="../static/images/cargo-truck_2311484.png" title="fast" width="120px" height="120px">
+            <h2>Fast shipping</h2>
+        </div>
+        <div class="img-b" id="img5b">
+            <img src="../static/images/contactless.png" title="inspecting" width="120px" height="120px">
+            <h2>Contactless dealings</h2>
+        </div>
+    </article>
+    <h1 id="h1-m"> Marketplace</h1>
+    <article id="marketplace">
+        <div class="d-flex">
+            <div class="box col">
+                <img class="img-m" src="../static/images/sneakers_icon.png" title="shoes" width="150px" height="150px">
+                <h2>Shoes</h2>
+            </div>
+            <div class="box col">
+                <img class="img-m" src="../static/images/clothes_icon.png" title="shoes" width="150px" height="150px">
+                <h2>Clothing</h2>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="box col">
+                <img class="img-m" src="../static/images/pendant.png" title="shoes" width="150px" height="150px">
+                <h2>Accessories</h2>
+            </div>
+            <div class="box col">
+                <img class="img-m" src="../static/images/more.png" title="shoes" width="150px" height="150px">
+                <h2>More</h2>
+            </div>
+        </div>
+    </article>
+
+</div>
+
+</body>
+</html>

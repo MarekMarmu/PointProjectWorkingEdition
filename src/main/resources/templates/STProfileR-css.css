@@ -1,0 +1,234 @@
+	/* basics*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+  background-color: inherit;
+  margin: 0px;
+  padding: 0px;
+}
+button:hover {
+  cursor: pointer;
+}
+body {
+  text-align: center;
+  font-size: 14px;
+  font-family: Calibri, Verdana, sans-serif;
+  color: black;
+  width: 1350px;
+  margin: 0 auto;
+}
+/*basics----------------------------------------------------------------------------------------------------------*/ 
+
+/*header*/ 
+header {
+  height: 110px;
+  border-bottom: 1px solid black;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+}
+#header_nest {
+  width: 800px;
+  margin: 0px auto;
+}
+.d-flex {
+  display: flex;
+}
+.d-flex-t {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+.col2 {
+  flex: 9;
+}
+#logo {
+  text-align: left;
+  margin-left: 1rem;
+  margin-top: 15px;
+  order: 2;
+}
+#logo_img {
+  width: 250px;
+  height: 75px;
+}
+#part2 {
+  order: 1;
+}
+#searchbar {
+  margin-top: 45px;
+}
+#searchbar button {
+  border: 0px;
+  background-color: transparent;
+}
+#searchbar button:hover {
+  cursor: pointer;
+}
+.search {
+  border: 2px solid black;
+  border-radius: 60px;
+  width: 250px;
+  padding: 10px 15px;
+  display: flex;
+  margin-left: 0px;
+}
+input {
+  border: 0px;
+}
+form {
+  width: 270px;
+}
+#social {
+  margin-top: 45px;
+  margin-left: 85px;
+  display: flex;
+  align-items:center;
+  order: 3;
+}
+.mar-1 {
+  width: 42px;
+  margin: 0px 10px 15px;
+}
+.line {
+  content: "";
+  width: 1px;
+  height: 24px;
+  background-color: black;
+  display: block;
+  margin-bottom: 10px;
+}
+/* header----------------------------------------------------------------------------------------------------------------*/
+
+/* navigation */
+#categories {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  position: sticky;
+  top: 110px;
+}
+#categories button {
+  padding: 5px 10px;
+  font-size: 20px;
+  color: rgb(140, 140, 140, 1.0);
+}
+#nav {
+	font-size: 15px;
+	margin: 20px auto 0px;
+	position: sticky;
+	top: 144px;
+	background-color: white;
+	text-align: left;
+	width: 800px;
+  color: rgb(140, 140, 140, 1.0);
+}
+#nav a:hover {
+	color: black;
+	transition: 0.2s;
+}
+ /* navigation -----------------------------------------------------------------------------------------------------------*/
+#container {
+  width: 920px;
+  height: 1000px;
+
+  margin: 0px auto;
+}
+h2 {
+  width: fit-content;
+  font-size: 20px;
+}
+#personal h2, #shipping h2 {
+  margin-bottom: 20px;
+}
+
+h3 {
+  text-align: left;
+  font-size: 17px;
+}
+.button {
+  background-color: rgb(80, 80, 80, 1.0);
+  padding: 2px 10px;
+  color: white;
+  border: none;
+  margin-left: 15px;
+  font-size: 16px;
+  width: fit-content;
+  height: fit-content;
+  font-family: Calibri, Verdana, sans-serif;
+}
+p {
+  text-align: left;
+  font-size: 15px;
+  color: rgb(140, 140, 140, 1.0);
+}
+#favourite p, #inventory p, #bids p {
+  margin-bottom: 15px;
+}
+.item {
+  margin-right: 50px;
+  width: 150px;
+}
+#personal {
+  border-bottom: 1px solid black;
+  height: 100px;
+  margin-bottom: 10px;
+}
+#shipping {
+  border-bottom: 1px solid black;
+  height: 120px;
+  margin-bottom: 10px;
+}
+#favourite {
+  border-bottom: 1px solid black;
+  height: 210px;
+  margin-bottom: 10px;
+}
+#favourite .d-flex {
+  column-gap: 16px;
+}
+#inventory {
+  border-bottom: 1px solid black;
+  height: 150px;
+  margin-bottom: 10px;
+}
+#bids {
+  border-bottom: 1px solid black;
+  height: 175px;
+  margin-bottom: 10px;
+}
+.favourite_a {
+  width: 140px;
+  height: 140px;
+  border: 1px solid grey;
+}
+.favourite_a_img {
+  height: 90px;
+  aspect-ratio: 1;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: left;
+  margin-left: 5px;
+  width: fit-content;
+}
+.price {
+  margin-left: 85px;
+  font-size: 15px;
+  font-weight: lighter;
+  width: fit-content;
+  padding: 2px 5px;
+  background-color: rgb(9, 129, 54, 1.0);
+}

@@ -1,0 +1,367 @@
+/* FRAMEWORK----------------------------------------------------------------------------------------*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background-color: inherit;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+button:hover {
+  cursor: pointer;
+}
+body {
+  font-size: 14px;
+  font-family: Calibri, Verdana, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+}
+.d-flex {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+.gap1 {
+  column-gap: 10px;
+}
+.gap2 {
+  column-gap: 20px;
+}
+.gap3 {
+  column-gap: 30px;
+}
+.gap4 {
+  column-gap: 40px;
+}
+.gap5 {
+  column-gap: 5%;
+}
+.gh1 {
+  font-size: 30px;
+}
+.gh2 {
+  font-size: 20px;
+}
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+}
+.item {
+  display: inline-block;
+  width: 100%;
+  height: 300px; /* Prozatím pouze pro příklad */
+  text-align: center;
+  font-size: 24px;
+}
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.prev {
+  left: 0;
+}
+.fnext {
+  right: 0;
+}
+
+/* FRAMEWORK----------------------------------------------------------------------------------------*/
+
+/* HEADER ------------------------------------------------------------------------------------------*/
+header {
+  width: 90%;
+  margin: 0px auto;
+  border-bottom: 1px solid #666;
+  padding-bottom: 20px;
+  padding-top: 40px;
+}
+#searchbar {
+  width: 300px;
+}
+.search {
+  border: 2px solid black;
+  border-radius: 60px;
+  width: 20px;
+  padding: 10px 15px;
+  margin-left: 0px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in, width 0.5s ease-in;
+}
+#searchbar:hover .search, .search:focus {
+  opacity: 1;
+  width: 260px;
+}
+#icon {
+  width: 40px;
+  margin-right: 10px;
+}
+#logo {
+  text-align: center;
+}
+#logo h1 {
+  font-size: 40px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+#user {
+  align-items: center;
+  justify-content: end;
+}
+#user img {
+  width: 40px;
+  height: 40px;
+}
+#user img:first-child {
+}
+/* HEADER ------------------------------------------------------------------------------------------*/
+
+/* NAV ---------------------------------------------------------------------------------------------*/
+#main_nav {
+  width: 60%;
+  margin: 10px auto 0px;
+  justify-content: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+  word-break: normal;
+}
+#main_nav img {
+  width: 15px;
+  height: 15px;
+}
+.dropdown-button {
+  font-size: 25px;
+  font-weight: lighter;
+}
+.dropdown {
+  margin: 0px 10px;
+  position: relative;
+  width: 120px;
+  text-align: center;
+}
+.dropdown:hover {
+  background-color: rgba(220, 220, 220, 1.0);
+}
+.dropdown-menu {
+  width: 100%;
+  display: none;
+  list-style: none;
+  position: absolute;
+  z-index: 999;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li {
+  display: block;
+  font-size: 25px;
+  padding: 5px 10px;
+  background-color: white;
+  text-align: center;
+}
+.dropdown-menu li:hover {
+  background-color: rgba(220, 220, 220, 1.0);
+  transition: 0.5s;
+}
+#main_nav div {
+  align-items: center;
+}
+/* NAV ---------------------------------------------------------------------------------------------*/
+
+/* MAIN --------------------------------------------------------------------------------------------*/
+#main {
+  width: 90%;
+  margin: 0px auto;
+}
+/* carousel 1 --------------------------------------------------------------------------------------*/
+#carousel_container {
+  margin-top: 20px ;
+  margin-bottom: 40px;
+}
+.carousel {
+  width: 75vw;
+  height: 75vh;
+  position: relative;
+  margin: 0 auto ;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.carousel-button img {
+  position: relative;
+}
+#left {
+  right: 2px;
+  top: 1px;
+}
+#right {
+  left: 2px;
+  top: 1px;
+}
+
+.carousel-button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+.prev {
+  left: 1rem;
+}
+.fnext {
+  right: 1rem;
+}
+/* carousel 1 --------------------------------------------------------------------------------------*/
+/* carousel 2 --------------------------------------------------------------------------------------*/
+#carousel_container2 {
+  height: 50vh;
+  background-color: red;
+  width: 75vw;
+  margin: 0px auto;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+.slider {
+  width: 85%;
+  height: 80%;
+  margin: 0px auto;
+  background-color: green;
+  column-gap: 20px;
+  align-items: center;
+  overflow: hidden;
+}
+#carousel_container2 h1 {
+  text-align: center;
+}
+.item {
+  background-color: blue;
+  display: block;
+  width: 11.5vw;
+  height: 35vh;
+  flex-shrink: 0;
+}
+.prev2 {
+  left: 0.5rem;
+}
+.next2 {
+  right: 0.5rem;
+}
+/* brands -----------------------------------------------------------------------------------------*/
+#brands {
+  width: 90%;
+  height: fit-content;
+  margin: 40px auto 0px;
+  border-bottom: 1px solid black;
+}
+#brands .gh1 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 2%; 
+}
+#brands button {
+  background-color: transparent;
+}
+.card {
+width: calc(90% / 3);
+aspect-ratio: 1 / 1.25;
+border-radius: 5%;
+margin: 0px 0px 5%;
+background-image: url(images/test-img.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+.logo {
+  margin-left: 5%;
+  margin-top: 5%;
+  border-radius: 50%;
+  width: 5vw;
+  aspect-ratio: 1;
+  background-color: red;
+}
+.card-text {
+  font-size: 2vh;
+  margin-top: 39vh;
+  align-items: center;
+  background-color: rgba(240, 240, 240, 1.0);
+  border-bottom-left-radius: 2vh 2vh;
+  border-bottom-right-radius: 2vh 2vh;
+  width: 100%;
+  height: 9vh;
+}
+.card-text h1 {
+  margin-left: 1vw;
+}
+.next {
+  width: 1vw;
+  margin-left: 9vw;
+}
+/*brands ------------------------------------------------------------------------------------------*/
+/*benefits ----------------------------------------------------------------------------------------*/
+#benefits h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+#benefits {
+  width: 90%;
+  margin: 0px auto;
+  height: 200px;
+  background-color: green;
+}
+#benefits h2 {
+  text-align: center;
+}
+#benefits .container {
+  margin-top: 20px;
+} 

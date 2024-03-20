@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Company</title>
+</head>
+<body>
+
+<h1 th:text="${company}"></h1>
+<div th:each="product : ${listOfProducts}">
+    <a th:src="'/product/' + ${product.getName()}" th:text="${product.getName()}"></a>
+</div>
+
+</body>
+</html>

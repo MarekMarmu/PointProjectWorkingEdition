@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }</style>
+</head>
+<body>
+<h2>Registration</h2>
+<form th:action="@{/api/v1/user/registration}" method="POST" th:object="${user}">
+    <div>
+        <label for="username">Uživatelské jméno</label>
+        <input id="username" name="username" th:field="*{username}" type="text"/>
+    </div>
+    <div>
+        <label for="password">Heslo</label>
+        <input type="password" id="password" name="password" th:field="*{password}" />
+    </div>
+
+    <div>
+        <label for="password">Email</label>
+        <input  id="email" name="password" th:field="*{email}" />
+    </div>
+
+    <div>
+        <label for="password">residence</label>
+        <input  id="residence" name="password" th:field="*{residence}" />
+    </div>
+
+    <input type="submit" value="Submit" />
+</form>
+
+<!-- Přesměrování po odeslání formuláře -->
+
+</body>
+</html>

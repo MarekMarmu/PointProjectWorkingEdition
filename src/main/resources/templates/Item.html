@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		/* FRAMEWORK----------------------------------------------------------------------------------------*/
+		* {
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+		button {
+			background-color: inherit;
+			border: none;
+			font-family: inherit;
+			font-size: inherit;
+		}
+		button:hover {
+			cursor: pointer;
+		}
+		body {
+			font-size: 14px;
+			font-family: Calibri, Verdana, sans-serif;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.d-flex {
+			display: flex;
+		}
+		.col {
+			flex: 1;
+		}
+		.gap1 {
+			column-gap: 10px;
+		}
+		.gap2 {
+			column-gap: 20px;
+		}
+		.gap3 {
+			column-gap: 30px;
+		}
+		.gap4 {
+			column-gap: 40px;
+		}
+		.gap5 {
+			column-gap: 5%;
+		}
+		.gh1 {
+			font-size: 30px;
+		}
+		.gh2 {
+			font-size: 20px;
+		}
+
+		/* FRAMEWORK----------------------------------------------------------------------------------------*/
+
+		/* HEADER ------------------------------------------------------------------------------------------*/
+		header {
+			width: 90%;
+			margin: 0px auto;
+			border-bottom: 1px solid #666;
+			padding-bottom: 20px;
+			padding-top: 40px;
+		}
+		#searchbar {
+			width: 300px;
+		}
+		.search {
+			border: 2px solid black;
+			border-radius: 60px;
+			width: 20px;
+			padding: 10px 15px;
+			margin-left: 0px;
+			opacity: 0;
+			transition: opacity 0.5s ease-in, width 0.5s ease-in;
+		}
+		#searchbar:hover .search, .search:focus {
+			opacity: 1;
+			width: 260px;
+		}
+		#icon {
+			width: 40px;
+			margin-right: 10px;
+		}
+		#logo {
+			text-align: right;
+		}
+		#logo h1 {
+			font-size: 40px;
+			font-weight: lighter;
+			text-transform: uppercase;
+		}
+		#user {
+			align-items: center;
+			justify-content: end;
+		}
+		#user img {
+			width: 40px;
+			height: 40px;
+		}
+		#user img:first-child {
+		}
+		/* HEADER ------------------------------------------------------------------------------------------*/
+
+		/* NAV ---------------------------------------------------------------------------------------------*/
+		#main_nav {
+			width: 60%;
+			margin: 10px auto 20px;
+			justify-content: center;
+			padding-bottom: 20px;
+			border-bottom: 1px solid black;
+			word-break: normal;
+		}
+		#main_nav img {
+			width: 15px;
+			height: 15px;
+		}
+		.dropdown-button {
+			font-size: 25px;
+			font-weight: lighter;
+		}
+		.dropdown {
+			margin: 0px 10px;
+			position: relative;
+			width: 120px;
+			text-align: center;
+		}
+		.dropdown:hover {
+			background-color: rgba(220, 220, 220, 1.0);
+		}
+		.dropdown-menu {
+			width: 100%;
+			display: none;
+			list-style: none;
+			position: absolute;
+			z-index: 999;
+		}
+		.dropdown:hover .dropdown-menu {
+			display: block;
+		}
+		.dropdown-menu li {
+			font-size: 25px;
+			padding: 5px 10px;
+			background-color: white;
+			text-align: center;
+		}
+		.dropdown-menu li:hover {
+			background-color: rgba(220, 220, 220, 1.0);
+			transition: 0.5s;
+		}
+		#main_nav div {
+			align-items: center;
+		}
+		/* NAV ---------------------------------------------------------------------------------------------*/
+		/*MAIN ---------------------------------------------------------------------------------------------*/
+		.content {
+			width: 80%;
+			margin: 0 auto 20px;
+		}
+		.images {
+			margin: 0px auto;
+			column-gap: 3vw;
+		}
+		.v-images {
+			flex-direction: column;
+			row-gap: 5vh;
+			justify-content: center;
+		}
+		.s-img {
+			width: 7vw;
+			aspect-ratio: 1/1;
+		}
+		.main-img {
+			width: 30vw;
+			aspect-ratio: 1/1;
+		}
+		.main-info {
+			width: 25%;
+			margin-left:5%;
+		}
+		.name {
+			font-size: 30px;
+			margin-bottom: 10px;
+		}
+		.brand {
+			margin-bottom: 20px ;
+		}
+		.brand-name {
+			text-decoration: underline;
+		}
+		.price {
+			font-size: 25px;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid lightgrey;
+		}
+		.size {
+			font-size: 20px;
+			margin-bottom: 5px;
+		}
+		.size-buttons {
+			font-size: 25px;
+			justify-content: center;
+			column-gap: calc((100% - 125px) / 5);
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid lightgrey;
+		}
+		.size-button {
+			width: 25px;
+
+		}
+		.size-button:focus {
+			color: white;
+			background-color: black;
+		}
+		.color {
+			font-size: 20px;
+			margin-bottom:10px ;
+		}
+		.color-button {
+			margin-left: 10px;
+			width: 30px;
+			aspect-ratio: 1/1;
+			border-radius: 50%;
+		}
+		.color-button:focus, #white:focus {
+			border: 2px solid black;
+		}
+		#blue {
+			background-color: darkblue;
+		}
+		#brown {
+			background-color: brown;
+		}
+		#green {
+			background-color: darkgreen;
+		}
+		#black {
+			background-color: black;
+		}
+		#white {
+			border: 1px solid black;
+		}
+		.color-buttons {
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid lightgrey;
+		}
+		.add {
+			text-align: center;
+			background-color: black;
+			border-radius: 50px;
+			padding: 10px 0px;
+		}
+		.add-button {
+			font-size: 30px;
+			color: white;
+			font-weight: lighter;
+		}
+		.add:hover {
+			background-color: white;
+			border: 1px solid black;
+			transition: 0.2s;
+		}
+		.add:hover .add-button {
+			color: black;
+		}
+		.info-other {
+			width: 80%;
+			margin: 0 auto 20px;
+		}
+		.details {
+			padding-right: 40px;
+			height: 50%;
+			margin-right: 10px;
+			border-right: 1px solid lightgrey;
+		}
+		.details h3 {
+			margin-bottom: 10px;
+		}
+		.details p {
+			font-size: 15px;
+			margin-bottom: 10px;
+		}
+		.preview {
+			width: 10vw;
+			aspect-ratio: 1/1;
+		}
+		.other h3 {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		.other h4 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.other-price {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+ <nav id="main_nav" class="d-flex gap4">
+		<div class="d-flex">
+			<div class="dropdown rotate180">
+				  <a href="#" class="dropdown-button">
+				    Hats <img src="images/down-arrow.svg">
+				  </a>
+				  <ul class="dropdown-menu">
+				    <li><a class="dropdown-item" href="#">čapica</a></li>
+				    <li><a class="dropdown-item" href="#">druhá čapica</a></li>
+				    <li><a class="dropdown-item" href="#">tretia čapica</a></li>
+				  </ul>
+			</div>
+			<div class="dropdown rotate180">
+				  <a href="#" class="dropdown-button">
+				    T-Shirts <img src="images/down-arrow.svg">
+				  </a>
+				  <ul class="dropdown-menu">
+				    <li><a class="dropdown-item" href="#">tričko</a></li>
+				    <li><a class="dropdown-item" href="#">iné tričko</a></li>
+				    <li><a class="dropdown-item" href="#">a dáke tričko</a></li>
+				  </ul>
+			</div>
+			<div class="dropdown rotate180">
+				  <a href="#" class="dropdown-button">
+				    Brands <img src="images/down-arrow.svg">
+				  </a>
+				  <ul class="dropdown-menu">
+				    <li><a class="dropdown-item" href="#">už ma to nebaví</a></li>
+				    <li><a class="dropdown-item" href="#">Another action</a></li>
+				    <li><a class="dropdown-item" href="#">Something else here</a></li>
+				  </ul>
+			</div>
+			<div class="dropdown rotate180">
+				  <a href="#" class="dropdown-button" type="button">
+				    Hoodies <img src="images/down-arrow.svg">
+				  </a>
+				  <ul class="dropdown-menu">
+				    <li><a class="dropdown-item" href="#">Action</a></li>
+				    <li><a class="dropdown-item" href="#">Another action</a></li>
+				    <li><a class="dropdown-item" href="#">Something else here</a></li>
+				  </ul>
+			</div>
+			<div class="dropdown rotate180">
+				  <a href="#" class="dropdown-button">
+				    Jeans <img src="images/down-arrow.svg">
+				  </a>
+				  <ul class="dropdown-menu">
+				    <li><a class="dropdown-item" href="#">Action</a></li>
+				    <li><a class="dropdown-item" href="#">Another action</a></li>
+				    <li><a class="dropdown-item" href="#">Something else here</a></li>
+				  </ul>
+			</div>
+			
+		</div>
+	</nav>
+	<section class="content">
+		<div class="d-flex images">
+			<div id="imagesOfProduct" class="d-flex v-images">
+
+			</div>
+			<div>
+				<img  class="main-img">
+			</div>
+			<div class="main-info">
+				<h1  class="name" th:text="${products.get(0).getName()}"> Full item name </h1>
+				<p class="brand">
+					From <span class="brand-name" th:text="${products.get(0).getCompany().getName()}"> Brand Name</span>
+				</p>
+				<p class="price" th:text="${products.get(0).getPrice()} + ' €'"></p>
+				<p class="size"> Choose your size </p>
+				<div  id="size-form" class="size-buttons d-flex">
+
+				</div>
+				<p class="color"> Choose color</p>
+				<div class="color-buttons">
+					<form id="color-form" method="get">
+						<button th:style="'background-color: ' + ${product.getColor().getColorCode()}" th:each="product: ${products}" th:value="${product.color}" th:text="${product.color.name()}" class="color-button" id="colorSelector" type="button" form="color-form"></button>
+					</form>
+				</div>
+				<div class="add">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+					<button id="addToCartButton" class="add-button" type="submit">Add to cart</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="info-other d-flex">
+		<div class="details">
+			<h3>Details</h3>
+			<p class="material">Here is the material</p>
+			<p class="gender">Here is the gender</p>
+			<p class="color">Here is the color</p>
+			<p class="width">Here is the width</p>
+			<p class="lenght">Here is the lenght</p>
+		</div>
+		<div class="other">
+			<a target="_blank" th:href="'/company/' + ${paddingProducts.get(0).getCompany().getId()}">More from <span th:text="${paddingProducts.get(0).getCompany().getName()}" class="brand-name"></span></a>
+			<div class="d-flex gap2">
+				<div th:each="companyProduct : ${paddingProducts}" class="card">
+					<img class="preview" th:src="'/images/' + ${companyProduct.getMainImage().getId()}">
+					<h4 th:text="${companyProduct.getName()}" class="product-name"></h4>
+					<p class="other-price"><span th:text="${companyProduct.getPrice()}" class="product-price"></span> &euro;</p>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+ <script th:inline="javascript" >
+	 document.addEventListener('DOMContentLoaded', function() {
+		 const sizes = document.getElementById('size-form');
+		 const mainImage = document.querySelector('.main-img');
+		 const products = /*[[${products}]]*/ null;
+		 let selectedSize;
+		 let productsSelected = null;
+		 let finalSelectedProduct;
+
+		 function updateSelectedProductInfo(buttonValue) {
+			 console.log(buttonValue);
+			 let selectedProducts = products.filter(product => product.color === buttonValue);
+
+			 if (selectedProducts.length > 0) {
+				 sizes.innerHTML = "";
+				 sizes.innerHTML += selectedProducts.map(product => `<button value="${product.size}" class="size-button">${product.size}</button>`);
+				 document.querySelectorAll('.size-button').forEach(button => button.addEventListener('click', event => {
+					 selectedSize = event.target.value;
+					 updateSelectedProductInfoBySize(selectedSize);
+				 }));
+				 console.log(sizes.innerHTML);
+
+				 productsSelected = selectedProducts;
+				 changePictures();
+			 }
+		 }
+
+		 function updateSelectedProductInfoBySize(sizeValue) {
+			 finalSelectedProduct = productsSelected.find(product => product.size === sizeValue);
+		 }
+
+		 function changePictures() {
+			 mainImage.src = `/images/${productsSelected[0].mainImage.id}`;
+			 var html = "";
+			 productsSelected[0].images.forEach(image => {
+				 html += `<img src="/images/${image.id}" class="s-img" width="200" height="200">`;
+			 });
+			 document.getElementById('imagesOfProduct').innerHTML = html;
+		 }
+
+		 function addToCart() {
+			 if (finalSelectedProduct) {
+				 console.log('id' + finalSelectedProduct.id);
+				 const url = `/cart/add/${finalSelectedProduct.id}`;
+
+				 fetch(url, {
+					 method: 'POST',
+					 headers: {
+						 'X-CSRF-TOKEN': document.querySelector('input[name="_csrf"]').value
+					 }
+				 })
+						 .then(response => {
+							 console.log('Response received:', response);
+						 })
+						 .catch(error => {
+							 console.error('Error :' + finalSelectedProduct.id, error);
+						 });
+			 } else {
+				 console.error('No final selected product.');
+			 }
+		 }
+		 
+		 updateSelectedProductInfo(document.querySelector('.color-button').value);
+
+		 document.getElementById('addToCartButton').addEventListener('click', addToCart);
+		 document.querySelectorAll(".color-button").forEach(button => button.addEventListener('click', event => {
+			 updateSelectedProductInfo(event.target.value);
+		 }));
+	 });
+
+ </script>
+</body>
+</html>

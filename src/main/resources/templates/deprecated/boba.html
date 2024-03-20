@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>List Item</title>
+</head>
+<style>
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  body {
+    text-align: center;
+    font-size: 14px;
+    font-family:Calibri, Verdana, sans-serif;
+    margin: 0 auto;
+    width: 1350px;
+  }
+  header {
+    height: 110px;
+    border-bottom: 1px solid black;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+  }
+  .d-flex {
+    display: flex;
+  }
+  .col {
+    flex: 1;
+  }
+  .col2 {
+    flex: 9;
+  }
+  .col3 {
+    flex: 7;
+  }
+  #logo {
+    text-align: left;
+    margin-left: 5rem;
+    margin-top: 15px;
+  }
+  #searchbar {
+    margin-top: 45px;
+    margin-left: 15rem;
+
+  }
+  #searchbar button {
+    border: 0px;
+    background-color: transparent;
+  }
+  #searchbar button:hover {
+    cursor: pointer;
+  }
+  .search {
+    border: 2px solid black;
+    border-radius: 60px;
+    width: 250px;
+    padding: 10px 15px;
+    display: flex;
+    margin-left: 0px;
+  }
+  input {
+    border: 0px;
+  }
+  form {
+    width: 350px;
+  }
+  #social {
+    margin-top: 45px;
+    margin-left: 16.5%;
+    display: flex;
+    align-items:center;
+  }
+  .mar-1 {
+    flex: 0.2;
+    margin: 0px 7px 15px;
+  }
+  .line {
+    content: "";
+    width: 1px;
+    height: 22px;
+    background-color: black;
+    display: block;
+    margin-bottom: 10px;
+  }
+  #nav {
+    font-size: 20px;
+    margin-top: 20px;
+    position: sticky;
+    top: 110px;
+    width: 190px;
+    background-color: white;
+    border-bottom: 1px solid black;
+    text-align: left;
+  }
+  #nav a:hover {
+    color: lightgreen;
+    transition: 0.2s;
+  }
+  #name {
+    font-weight: lighter;
+    margin-top: 20px;
+    font-size: 2rem;
+    /*Slider ---------------------------------------------------------------------------------------------------------------------- */
+  }
+  #images {
+    margin-left: calc(50% - 375px);
+    margin-top: 40px;
+  }
+  .box {
+    border: 2px solid lightgreen;
+    background-image: linear-gradient(to top, white, rgba(0, 0, 0, 0.1));
+    height: 275px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2), 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+    width: 275px;
+    padding: 23px;
+  }
+  .slider {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: contain;
+  }
+  #slider-nav {
+    display: flex;
+    column-gap: 25px;
+    margin-left: 23px;
+    margin-top: 80px;
+
+  }
+  #slider-nav a {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+  }
+  #slider-nav a:focus {
+    background-color:black;
+  }
+  /* ------------------------------------------------------------ slider ------------------------------------------------------------------- */
+  #size {
+    border: 2px solid lightgreen;
+    background-image: linear-gradient(to top, white, rgba(0, 0, 0, 0.1));
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2), 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+    width: 300px	;
+    height: 35px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    margin-left: 180px;
+    margin-top: 75px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  #size:hover #rolldown {
+    display: block;
+  }
+  #size h2 {
+    font-size: 25px;
+    font-weight: lighter;
+  }
+  #rolldown {
+    margin-top: 4px;
+    background-image: linear-gradient(to top, white, rgba(0, 0, 0, 0.1));
+    border: 2px solid lightgreen;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2), 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none;
+  }
+  #rolldown p {
+    border-bottom: 1px solid lightgreen;
+    padding-right: 15px;
+  }
+  #rolldown p:hover {
+    background-color: lightgreen;
+  }
+  #sold {
+    width: 300px	;
+    height: 35px;
+    border: 2px solid lightgreen;
+    background-image: linear-gradient(to top, white, rgba(0, 0, 0, 0.1));
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2), 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
+    margin-left: 180px;
+  }
+  #sold h2 {
+    font-weight: lighter;
+    font-size: 25px;
+  }
+  #price {}
+
+</style>
+
+
+<body>
+<header class="d-flex">
+  <a href="../STIndex.html" title="Home"><div id="logo" class="col">
+    <img src="../../static/images/logo.svg" width="300px" height="90px">
+  </div> </a>
+  <div id="searchbar" class="col">
+    <form class="d-flex" action="">
+      <button class="col" type="submit"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="42px" height="42px"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"/></svg>
+      </button>
+      <input class="search col2" type="text" placeholder="Search." name="b">
+    </form>
+  </div>
+  <div id="social" class="col">
+    <a class="mar-1" href="STAdd.html" title="Add"> <img src="../../static/images/plus.png" title="plus" width="40px" height="40px"></a>
+    <div class="line"></div>
+    <a class="mar-1" href="../STCart.html" title="Cart"> <img src="../../static/images/shopping-cart.png" title="cart" width="40px" height="40px"></a>
+    <div class="line"></div>
+    <a class="mar-1" href="../STProfile.html" title="User"><img src="../../static/images/user.png" title="User" width="40px" height="40px"></a>
+  </div>
+</header>
+<nav id="nav">
+  <a href="../STIndex.html"> Home</a>
+  <a href="../STShoes.html"> > Shoes </a>
+  <a href="../STItem.html">  > Brand</a>
+</nav>
+<h1 id="name">/Shoe Name/</h1>
+<div class="container d-flex">
+  <div id="images" class="box">
+  </div>
+
+  <div id="slider-nav">
+    <img id="slider" th:src="@{../../static/images/image1.jpg}" alt="Slider Image" >
+    <button id="sliderLeft">Left</button>
+    <button id="sliderRight">Right</button>
+  </div>
+
+
+  <div>
+    <div id="size">
+      <h2>Sizes</h2>
+      <div id="rolldown">
+        <p>size</p>
+        <p>size</p>
+        <p>size</p>
+        <p>size</p>
+        <p>size</p>
+        <p>size</p>
+        <p>size</p>
+        <p>size</p>
+        <p>size</p>
+        <p>size</p>
+      </div>
+    </div>
+    <div id="sold">
+      <h2>Last week sold: /number/</h2>
+    </div>
+    <div id="price">
+      <h2>Lowest Price: /price/ </h2>
+    </div>
+  </div>
+
+</div>
+
+<script >
+
+  let images = ["../static/images/image1.jpg", "../static/images/image2.jpg"];
+  let currentImageIndex = 0;
+
+  const slider = document.getElementById('slider');
+  const sliderLeft = document.getElementById('sliderLeft');
+  const sliderRight = document.getElementById('sliderRight');
+
+  sliderLeft.addEventListener('click', e => {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    slider.src = images[currentImageIndex];
+    console.log(currentImageIndex);
+  });
+
+  sliderRight.addEventListener('click', e => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    slider.src = images[currentImageIndex];
+    console.log(currentImageIndex);
+  });
+
+
+</script>
+
+</body>
+</html>
