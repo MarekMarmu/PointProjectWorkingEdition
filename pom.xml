@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.point</groupId>
-	<artifactId>demolition</artifactId>
-	<version>0.2</version>
+	<artifactId>ROOT</artifactId>
+	<version>0.9</version>
 	<name>PointDatabase</name>
 	<description>project for Spring Boot</description>
 	<packaging>war</packaging>

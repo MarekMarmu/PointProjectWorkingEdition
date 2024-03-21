@@ -55,8 +55,17 @@ public class SpringSecurityConfig {
                 .csrfTokenRepository(csrfTokenRepository())
                 .and()
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/css/**"), AntPathRequestMatcher.antMatcher( "/js/**" ), AntPathRequestMatcher.antMatcher( "/images/**") ).permitAll()
-                .requestMatchers(AntPathRequestMatcher.antMatcher( "/registration"), AntPathRequestMatcher.antMatcher( "/api/v1/user/registration")).permitAll().anyRequest().authenticated())
+                        .requestMatchers(
+                                AntPathRequestMatcher.antMatcher("/css/**"),
+                                AntPathRequestMatcher.antMatcher( "/js/**" ),
+                                AntPathRequestMatcher.antMatcher( "/images/**") ).permitAll()
+                .requestMatchers(
+                        AntPathRequestMatcher.antMatcher( "/registration"),
+                        AntPathRequestMatcher.antMatcher( "/api/v1/user/registration"))
+                        .permitAll()
+
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/manager/**")).hasRole("ADMIN")
+                        .anyRequest().authenticated())
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/api/v1/user/login")

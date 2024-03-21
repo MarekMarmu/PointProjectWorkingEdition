@@ -67,10 +67,10 @@ public class TemplateController {
         return "STProfile";
     }
 
-//    @GetMapping("/")
-//    public String homePage() {
-//        return "Index";
-//    }
+  @GetMapping("/")
+   public String homePage() {
+        return "Index";
+   }
 
     @GetMapping("/userProfile")
     public String userProfile() {
